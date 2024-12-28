@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -8,3 +9,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/','auth.login')->name('home');
 Route::view('sign-up','auth.signup')->name('sign.up');
+Route::post('sign-up',[RegisterController::class,'signUp'])->name('sign.up');
