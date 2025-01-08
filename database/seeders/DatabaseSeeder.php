@@ -3,6 +3,11 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use Database\Seeders\version1\DistrictsTableSeeder;
+use Database\Seeders\version1\GenderTableSeeder;
+use Database\Seeders\version1\IdTypeTableSeeder;
+use Database\Seeders\version1\MaritialStatusTableSeeder;
+use Database\Seeders\version1\RegionsTableSeeder;
 use Database\Seeders\version1\RoleTableSeeder;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -23,6 +28,11 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             RoleTableSeeder::class,
+            GenderTableSeeder::class,
+            IdTypeTableSeeder::class,
+            MaritialStatusTableSeeder::class,
+            RegionsTableSeeder::class,
+            DistrictsTableSeeder::class,
             // VisaTypeSeeder::class
         ]);
     }

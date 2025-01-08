@@ -1,774 +1,582 @@
 @extends('layouts.main')
-@section('content')
+@section('contents')
+<div class="page-content">
+  <div class="container-fluid">
 
-    <!-- ============ Body content start ============= -->
-    <div class="main-content">
-      <div class="breadcrumb">
-        <h1 class="me-2">Version 3</h1>
-        <ul>
-          <li><a href="">Dashboard</a></li>
-          <li>Version 3</li>
-        </ul>
-      </div>
-      <div class="separator-breadcrumb border-top"></div>
+      <!-- start page title -->
       <div class="row">
-        <!-- no 13 chart-->
-        <div class="col-md-3 col-lg-3">
-          <div class="card mb-4 o-hidden">
-            <div class="card-body">
-              <div class="ul-widget__row-v2">
-                <div id="chart13"></div>
-                <div class="ul-widget__content-v2">
-                  <h4 class="heading mt-3">698 212</h4>
-                  <small class="text-muted m-0">50% Average</small>
-                </div>
+          <div class="col-12">
+              <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                  <h4 class="mb-sm-0 font-size-18">Dashboard</h4>
+
+                  <div class="page-title-right">
+                      <ol class="breadcrumb m-0">
+                          <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>
+                          <li class="breadcrumb-item active">Dashboard</li>
+                      </ol>
+                  </div>
+
               </div>
-            </div>
           </div>
-        </div>
-        <!-- no 14 chart-->
-        <div class="col-md-3 col-lg-3">
-          <div class="card mb-4 o-hidden">
-            <div class="card-body">
-              <div class="ul-widget__row-v2">
-                <div id="chart14"></div>
-                <div class="ul-widget__content-v2">
-                  <h4 class="heading mt-3">369 212</h4>
-                  <small class="text-muted m-0">24% Average</small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- no 15 chart-->
-        <div class="col-md-3 col-lg-3">
-          <div class="card mb-4 o-hidden">
-            <div class="card-body">
-              <div class="ul-widget__row-v2">
-                <div id="chart15"></div>
-                <div class="ul-widget__content-v2">
-                  <h4 class="heading mt-3">369 212</h4>
-                  <small class="text-muted m-0">24% Average</small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- no 16 chart-->
-        <div class="col-md-3 col-lg-3">
-          <div class="card mb-4 o-hidden">
-            <div class="card-body">
-              <div class="ul-widget__row-v2">
-                <div id="chart16"></div>
-                <div class="ul-widget__content-v2">
-                  <h4 class="heading mt-3">369 212</h4>
-                  <small class="text-muted m-0">24% Average</small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- left-side-->
-        <div class="col-lg-6 col-md-12">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card mb-4">
-                <div class="card-body">
-                  <div class="card-title m-0">Network Stats</div>
-                  <p class="text-small text-muted">
-                    Lorem ipsum dolor sit amet consectetur.
-                  </p>
-                  <div class="row">
-                    <div class="col-lg-6 col-md-12 mb-4">
-                      <div
-                        class="p-4 rounded d-flex align-items-center bg-primary text-white"
-                      >
-                        <i class="i-Data-Backup text-32 me-3"></i>
-                        <div>
-                          <h4 class="text-18 mb-1 text-white">Backups</h4>
-                          <span>Total: 32</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 mb-4">
-                      <div
-                        class="p-4 rounded d-flex align-items-center bg-primary text-white"
-                      >
-                        <i class="i-Big-Data text-32 me-3"></i>
-                        <div>
-                          <h4 class="text-18 mb-1 text-white">Databases</h4>
-                          <span>Total: 302</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 mb-4">
-                      <div
-                        class="p-4 border border-light rounded d-flex align-items-center"
-                      >
-                        <i class="i-Data-Cloud text-32 me-3"></i>
-                        <div>
-                          <h4 class="text-18 mb-1">Space used</h4>
-                          <span>Total: 160GB</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 mb-4">
-                      <div
-                        class="p-4 border border-light rounded d-flex align-items-center"
-                      >
-                        <i class="i-Data-Download text-32 me-3"></i>
-                        <div>
-                          <h4 class="text-18 mb-1">Downloaded</h4>
-                          <span>Total: 30GB</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card card-profile-1 mb-4">
-                <div class="card-body text-center">
-                  <div class="avatar box-shadow-2 mb-3">
-                    <img
-                      src="../../dist-assets/images/faces/16.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <h5 class="m-0">Jassica Hike</h5>
-                  <p class="mt-0 text-muted">UI/UX Designer</p>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Recusandae cumque.
-                  </p>
-                  <button class="btn btn-primary btn-rounded">
-                    Contact Jassica
-                  </button>
-                  <div class="card-socials-simple mt-4">
-                    <a href=""><i class="i-Linkedin-2"></i></a
-                    ><a href=""><i class="i-Facebook-2"></i></a
-                    ><a href=""><i class="i-Twitter"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card card-profile-1 mb-4">
-                <div class="card-body text-center">
-                  <div class="avatar box-shadow-2 mb-3">
-                    <img
-                      src="../../dist-assets/images/faces/2.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <h5 class="m-0">James Hike</h5>
-                  <p class="mt-0 text-muted">VR Developer</p>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Recusandae cumque.
-                  </p>
-                  <button class="btn btn-primary btn-rounded">
-                    Contact James
-                  </button>
-                  <div class="card-socials-simple mt-4">
-                    <a href=""><i class="i-Linkedin-2"></i></a
-                    ><a href=""><i class="i-Facebook-2"></i></a
-                    ><a href=""><i class="i-Twitter"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="card card-ecommerce-3 o-hidden mb-4">
-                <div class="d-flex flex-column flex-sm-row">
-                  <div>
-                    <img
-                      class="card-img-left"
-                      src="../../dist-assets/images/photo-wide-1.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="flex-grow-1 p-4">
-                    <h5 class="m-0">Product featured</h5>
-                    <p class="m-0 text-small text-muted">By ABC Cafe</p>
-                    <p class="m-0">
-                      $40
-                      <del>$55</del>
-                    </p>
-                    <p class="text-muted mt-3">
-                      Lorem ipsum dolor sit amet consectetur, adipisicing
-                      elit. Nesciunt placeat esse tempore debitis.
-                    </p>
-                    <div class="actions">
-                      <button
-                        class="btn btn-sm rounded-circle btn-icon btn-outline-primary"
-                      >
-                        <i class="icon i-Add-Cart"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="card card-ecommerce-3 o-hidden mb-4">
-                <div class="d-flex flex-column flex-sm-row">
-                  <div>
-                    <img
-                      class="card-img-left"
-                      src="../../dist-assets/images/photo-wide-2.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="flex-grow-1 p-4">
-                    <h5 class="m-0">Product featured</h5>
-                    <p class="m-0 text-small text-muted">By Apple</p>
-                    <p class="m-0">
-                      $40
-                      <del>$55</del>
-                    </p>
-                    <p class="text-muted mt-3">
-                      Lorem ipsum dolor sit amet consectetur, adipisicing
-                      elit. Nesciunt placeat esse tempore debitis.
-                    </p>
-                    <div class="actions">
-                      <button
-                        class="btn btn-sm rounded-circle btn-icon btn-outline-primary"
-                      >
-                        <i class="icon i-Add-Cart"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-12 col-xl-12">
-              <div class="card">
-                <div class="card-body">
-                  <div class="ul-widget__head">
-                    <div class="ul-widget__head-label">
-                      <h3 class="ul-widget__head-title">
-                        Recent Notifications
-                      </h3>
-                    </div>
-                    <div class="ul-widget__head-toolbar">
-                      <ul
-                        class="nav nav-tabs nav-tabs-line nav-tabs-bold ul-widget-nav-tabs-line"
-                        role="tablist"
-                      >
-                        <li class="nav-item">
-                          <a
-                            class="nav-link active show"
-                            data-bs-toggle="tab"
-                            href="#__g-widget-s7-tab1-content"
-                            role="tab"
-                            aria-selected="true"
-                            >Today</a
-                          >
-                        </li>
-                        <li class="nav-item">
-                          <a
-                            class="nav-link"
-                            data-bs-toggle="tab"
-                            href="#__g-widget-s7-tab2-content"
-                            role="tab"
-                            aria-selected="false"
-                            >Month</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="ul-widget__body">
-                    <div class="tab-content">
-                      <div
-                        class="tab-pane active show"
-                        id="__g-widget-s7-tab1-content"
-                      >
-                        <div class="ul-widget-s7n">
-                          <div class="ul-widget-s7__items mb-4">
-                            <span class="ul-widget-s7__item-time ul-middle"
-                              >10:00</span
-                            >
-                            <div class="ul-widget-s7__item-circle">
-                              <p class="ul-vertical-line bg-primary"></p>
-                            </div>
-                            <div class="ul-widget-s7__item-text">
-                              Lorem ipsum dolor sit amit,consectetur eiusmdd
-                              tempor<br />
-                              incididunt ut labore et dolore magna
-                            </div>
-                          </div>
-                          <div class="ul-widget-s7__items mb-4">
-                            <span class="ul-widget-s7__item-time ul-middle"
-                              >08:00</span
-                            >
-                            <div class="ul-widget-s7__item-circle">
-                              <p class="ul-vertical-line bg-success"></p>
-                            </div>
-                            <div class="ul-widget-s7__item-text">
-                              Lorem ipsum dolor sit amit,consectetur eiusmdd
-                              tempor<br />
-                              incididunt ut labore et dolore magna
-                            </div>
-                          </div>
-                          <div class="ul-widget-s7__items mb-4">
-                            <span class="ul-widget-s7__item-time ul-middle"
-                              >13:00</span
-                            >
-                            <div class="ul-widget-s7__item-circle">
-                              <p class="ul-vertical-line bg-danger"></p>
-                            </div>
-                            <div class="ul-widget-s7__item-text">
-                              Lorem ipsum dolor sit amit,consectetur eiusmdd
-                              tempor<br />
-                              incididunt ut labore et dolore magna
-                            </div>
-                          </div>
-                          <div class="ul-widget-s7__items">
-                            <span class="ul-widget-s7__item-time ul-middle"
-                              >05:30</span
-                            >
-                            <div class="ul-widget-s7__item-circle">
-                              <p class="ul-vertical-line bg-warning"></p>
-                            </div>
-                            <div class="ul-widget-s7__item-text">
-                              Lorem ipsum dolor sit amit,consectetur eiusmdd
-                              tempor<br />
-                              incididunt ut labore et dolore magna
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="__g-widget-s7-tab2-content">
-                        <div class="ul-widget-s7n">
-                          <div class="ul-widget-s7__items mb-4">
-                            <span class="ul-widget-s7__item-time ul-middle"
-                              >12:00</span
-                            >
-                            <div class="ul-widget-s7__item-circle">
-                              <p class="ul-vertical-line bg-danger"></p>
-                            </div>
-                            <div class="ul-widget-s7__item-text">
-                              Lorem ipsum dolor sit amit,consectetur eiusmdd
-                              tempor<br />
-                              incididunt ut labore et dolore magna
-                            </div>
-                          </div>
-                          <div class="ul-widget-s7__items mb-4">
-                            <span class="ul-widget-s7__item-time ul-middle"
-                              >08:00</span
-                            >
-                            <div class="ul-widget-s7__item-circle">
-                              <p class="ul-vertical-line bg-info"></p>
-                            </div>
-                            <div class="ul-widget-s7__item-text">
-                              Lorem ipsum dolor sit amit,consectetur eiusmdd
-                              tempor<br />
-                              incididunt ut labore et dolore magna
-                            </div>
-                          </div>
-                          <div class="ul-widget-s7__items mb-4">
-                            <span class="ul-widget-s7__item-time ul-middle"
-                              >04:30</span
-                            >
-                            <div class="ul-widget-s7__item-circle">
-                              <p class="ul-vertical-line bg-warning"></p>
-                            </div>
-                            <div class="ul-widget-s7__item-text">
-                              Lorem ipsum dolor sit amit,consectetur eiusmdd
-                              tempor<br />
-                              incididunt ut labore et dolore magna
-                            </div>
-                          </div>
-                          <div class="ul-widget-s7__items">
-                            <span class="ul-widget-s7__item-time ul-middle"
-                              >05:30</span
-                            >
-                            <div class="ul-widget-s7__item-circle">
-                              <p class="ul-vertical-line bg-dark"></p>
-                            </div>
-                            <div class="ul-widget-s7__item-text">
-                              Lorem ipsum dolor sit amit,consectetur eiusmdd
-                              tempor<br />
-                              incididunt ut labore et dolore magna
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- right-side-->
-        <div class="col-lg-6 col-md-12">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card mb-4">
-                <div class="card-body">
-                  <div class="card-title">Basic Column chart</div>
-                  <div id="basicColumn-chart"></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-12 col-xl-12 mb-4">
-              <div class="card">
-                <div class="card-body">
-                  <div class="card-title">Payment For;A;S m #01</div>
-                  <div class="ul-widget-list__payment-method mb-3">
-                    <img
-                      src="../../dist-assets/images/master-card.png"
-                      style="width: 50px"
-                      alt=""
-                      srcset=""
-                    /><img
-                      src="../../dist-assets/images/visa.png"
-                      style="width: 50px"
-                      alt=""
-                      srcset=""
-                    /><img
-                      src="../../dist-assets/images/paypal.png"
-                      style="width: 50px"
-                      alt=""
-                      srcset=""
-                    />
-                  </div>
-                  <p
-                    class="alert alert-dismissible fade show alert-success"
-                  >
-                    Some text success or error
-                  </p>
-                  <div class="ul-widget__payment-form">
-                    <form action="">
-                      <div class="card-body">
-                        <div class="row">
-                          <div class="form-group col-md-12">
-                            <label class="ul-form__label" for="inputEmail4">
-                              Full Name:
-                            </label>
-                            <div class="input-group mb-3">
-                              <span
-                                class="input-group-text"
-                                id="basic-addon1"
-                                ><i class="i-Male-21 text-18"></i
-                              ></span>
-                              <input
-                                class="form-control"
-                                type="text"
-                                placeholder=""
-                                aria-label="Username"
-                                aria-describedby="basic-addon1"
-                              />
-                            </div>
-                            <small
-                              class="ul-form__text form-text"
-                              id="passwordHelpBlock"
-                              >Some help content goes here</small
-                            >
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="form-group col-md-12">
-                            <label class="ul-form__label" for="inputEmail4">
-                              Card Number:
-                            </label>
-                            <div class="input-group mb-3">
-                              <span
-                                class="input-group-text"
-                                id="basic-addon1"
-                                ><i class="i-Credit-Card-2 text-18"></i
-                              ></span>
-                              <input
-                                class="form-control"
-                                type="text"
-                                placeholder=""
-                                aria-label="Username"
-                                aria-describedby="basic-addon1"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-sm-8">
-                            <label><span>Expiration</span></label>
-                            <div class="input-group align-items-center">
-                              <select
-                                class="form-control"
-                                style="width: 45%"
-                              >
-                                <option>Month</option>
-                                <option>01 - Janiary</option>
-                                <option>02 - February</option>
-                                <option>03 - February</option>
-                                <option>04 - march</option></select
-                              ><span class="text-center" style="width: 10%"
-                                >/</span
-                              >
-                              <select
-                                class="form-control"
-                                style="width: 45%"
-                              >
-                                <option>Year</option>
-                                <option>2018</option>
-                                <option>2019</option>
-                                <option>2020</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div class="col-sm-4">
-                            <label
-                              class="font-weight-700 text-dark"
-                              data-bs-toggle="tooltip"
-                              data-bs-placement="top"
-                              title=""
-                              data-original-title="6 digits code on back side of the card"
-                              >CVV</label
-                            >
-                            <input
-                              class="form-control"
-                              required=""
-                              type="text"
-                            />
-                          </div>
-                        </div>
-                        <button
-                          class="btn btn-primary w-100 mb-3 mt-3"
-                          type="button"
-                        >
-                          Confirm
-                        </button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!--
-            <div class="col-md-6 col-sm-6">
-            <div class="card bg-dark text-white o-hidden mb-4">
-            <img class="card-img" src="../../dist-assets/images/photo-long-1.jpg" alt="Card image">
-            <div class="card-img-overlay">
-            <div class="text-center pt-4">
-            <h5 class="card-title mb-2 text-white">Card title</h5>
-            <div class="separator border-top mb-2"></div>
-            <p class="text-small font-italic">Last updated 3 mins ago</p>
-            </div>
-            <div class="p-1 text-left card-footer font-weight-light d-flex">
-            <span class="me-3 d-flex align-items-center"><i class="i-Speach-Bubble-6 me-1"></i>
-            12 </span>
-            <span class="d-flex align-items-center"><i class="i-Calendar-4 me-2"></i>03.12.2018</span>
-            </div>
-            </div>
-            </div>
-            </div>
-            -->
-            <!--
-            <div class="col-md-6 col-sm-6">
-            <div class="card bg-dark text-white o-hidden mb-4">
-            <img class="card-img" src="../../dist-assets/images/photo-long-2.jpg" alt="Card image">
-            <div class="card-img-overlay">
-            <div class="text-center pt-4">
-            <h5 class="card-title mb-2 text-white">Card title</h5>
-            <div class="separator border-top mb-2"></div>
-            <p class="text-small font-italic">Last updated 3 mins ago</p>
-            </div>
-            <div class="p-1 text-left card-footer font-weight-light d-flex">
-            <span class="me-3 d-flex align-items-center"><i class="i-Speach-Bubble-6 me-1"></i>
-            12 </span>
-            <span class="d-flex align-items-center"><i class="i-Calendar-4 me-2"></i>03.12.2018</span>
-            </div>
-            </div>
-            </div>
-            </div>
-            -->
-            <div class="col-md-12 mb-4">
-              <div class="card">
-                <div class="card-body">
-                  <h6 class="mb-2 text-muted">Project Completion Rate</h6>
-                  <p class="text-22 font-weight-light mb-1">
-                    <i class="i-Up text-success"></i> 15%
-                  </p>
-                  <div id="echart9" style="height: 60px"></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-body">
-                  <h6 class="mb-2 text-muted">Project Completion Rate</h6>
-                  <p class="text-22 font-weight-light mb-1">
-                    <i class="i-Down text-danger"></i> 15%
-                  </p>
-                  <div id="echart10" style="height: 60px"></div>
-                </div>
-              </div>
-            </div>
-            <div class="mt-3 mb-4 col-lg-12 col-xl-12">
-              <div class="card text-center border-primary">
-                <!-- -->
-                <div class="card-header bg-primary text-white">
-                  <div>Developers</div>
-                </div>
-                <div class="card-body">
-                  <!-- -->
-                  <!-- -->
-                  <div class="ul-widget5">
-                    <div class="ul-widget-s5__item mb-5">
-                      <div class="ul-widget-s5__content">
-                        <div class="ul-widget-s5__pic">
-                          <img
-                            id="userDropdown"
-                            src="../../dist-assets/images/faces/1.jpg"
-                            alt=""
-                            data-bs-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          />
-                        </div>
-                        <div class="ul-widget-s5__section">
-                          <a class="ul-widget4__title" href="#"
-                            >Great Logo Designn</a
-                          >
-                          <p class="ul-widget-s5__desc">
-                            UI LIb admin themes.
-                          </p>
-                        </div>
-                      </div>
-                      <div class="ul-widget-s5__content">
-                        <div class="ul-widget-s5__progress">
-                          <div class="ul-widget-s5__stats">
-                            <span>50%</span><span>London</span>
-                          </div>
-                          <div class="progress">
-                            <div
-                              class="progress-bar bg-success progress-bar-striped progress-bar-animated"
-                              role="progressbar"
-                              aria-valuemin="0"
-                              aria-valuemax="100"
-                              aria-valuenow="25"
-                              style="width: 25%"
-                            >
-                              25
-                            </div>
-                          </div>
-                        </div>
-                        <button
-                          class="btn btn-outline-primary"
-                          type="button"
-                        >
-                          Follow
-                        </button>
-                      </div>
-                    </div>
-                    <div class="ul-widget-s5__item mb-5">
-                      <div class="ul-widget-s5__content">
-                        <div class="ul-widget-s5__pic">
-                          <img
-                            id="userDropdown"
-                            src="../../dist-assets/images/faces/2.jpg"
-                            alt=""
-                            data-bs-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          />
-                        </div>
-                        <div class="ul-widget-s5__section">
-                          <a class="ul-widget4__title" href="#"
-                            >Great Logo Designn</a
-                          >
-                          <p class="ul-widget-s5__desc">
-                            UI LIb admin themes.
-                          </p>
-                        </div>
-                      </div>
-                      <div class="ul-widget-s5__content">
-                        <div class="ul-widget-s5__progress">
-                          <div class="ul-widget-s5__stats">
-                            <span>75%</span><span>U.S</span>
-                          </div>
-                          <div class="progress">
-                            <div
-                              class="progress-bar bg-danger progress-bar-striped progress-bar-animated"
-                              role="progressbar"
-                              aria-valuemin="0"
-                              aria-valuemax="100"
-                              aria-valuenow="75"
-                              style="width: 75%"
-                            >
-                              75
-                            </div>
-                          </div>
-                        </div>
-                        <button
-                          class="btn btn-outline-success"
-                          type="button"
-                        >
-                          Follow
-                        </button>
-                      </div>
-                    </div>
-                    <div class="ul-widget-s5__item mb-5">
-                      <div class="ul-widget-s5__content">
-                        <div class="ul-widget-s5__pic">
-                          <img
-                            id="userDropdown"
-                            src="../../dist-assets/images/faces/3.jpg"
-                            alt=""
-                            data-bs-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          />
-                        </div>
-                        <div class="ul-widget-s5__section">
-                          <a class="ul-widget4__title" href="#"
-                            >Frontend Developer</a
-                          >
-                          <p class="ul-widget-s5__desc">
-                            UI LIb admin themes.
-                          </p>
-                        </div>
-                      </div>
-                      <div class="ul-widget-s5__content">
-                        <div class="ul-widget-s5__progress">
-                          <div class="ul-widget-s5__stats">
-                            <span>30%</span><span>Finland</span>
-                          </div>
-                          <div class="progress">
-                            <div
-                              class="progress-bar bg-warning progress-bar-striped progress-bar-animated"
-                              role="progressbar"
-                              aria-valuemin="0"
-                              aria-valuemax="100"
-                              aria-valuenow="30"
-                              style="width: 30%"
-                            >
-                              30
-                            </div>
-                          </div>
-                        </div>
-                        <button
-                          class="btn btn-outline-danger"
-                          type="button"
-                        >
-                          Follow
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- -->
-                <!-- -->
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-      <!-- end of main-content -->
-    </div>
-  
- 
+      <!-- end page title -->
+
+      <div class="row">
+          <div class="col-xl-4">
+              <div class="card overflow-hidden">
+                  <div class="bg-primary-subtle">
+                      <div class="row">
+                          <div class="col-7">
+                              <div class="text-primary p-3">
+                                  <h5 class="text-primary">Welcome Back !</h5>
+                                  <p>Skote Dashboard</p>
+                              </div>
+                          </div>
+                          <div class="col-5 align-self-end">
+                              <img src="assets/images/profile-img.png" alt="" class="img-fluid">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card-body pt-0">
+                      <div class="row">
+                          <div class="col-sm-4">
+                              <div class="avatar-md profile-user-wid mb-4">
+                                  <img src="assets/images/users/avatar-1.jpg" alt="" class="img-thumbnail rounded-circle">
+                              </div>
+                              <h5 class="font-size-15 text-truncate">Henry Price</h5>
+                              <p class="text-muted mb-0 text-truncate">UI/UX Designer</p>
+                          </div>
+
+                          <div class="col-sm-8">
+                              <div class="pt-4">
+
+                                  <div class="row">
+                                      <div class="col-6">
+                                          <h5 class="font-size-15">125</h5>
+                                          <p class="text-muted mb-0">Projects</p>
+                                      </div>
+                                      <div class="col-6">
+                                          <h5 class="font-size-15">$1245</h5>
+                                          <p class="text-muted mb-0">Revenue</p>
+                                      </div>
+                                  </div>
+                                  <div class="mt-4">
+                                      <a href="javascript: void(0);" class="btn btn-primary waves-effect waves-light btn-sm">View Profile <i class="mdi mdi-arrow-right ms-1"></i></a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="card">
+                  <div class="card-body">
+                      <h4 class="card-title mb-4">Monthly Earning</h4>
+                      <div class="row">
+                          <div class="col-sm-6">
+                              <p class="text-muted">This month</p>
+                              <h3>$34,252</h3>
+                              <p class="text-muted"><span class="text-success me-2"> 12% <i class="mdi mdi-arrow-up"></i> </span> From previous period</p>
+
+                              <div class="mt-4">
+                                  <a href="javascript: void(0);" class="btn btn-primary waves-effect waves-light btn-sm">View More <i class="mdi mdi-arrow-right ms-1"></i></a>
+                              </div>
+                          </div>
+                          <div class="col-sm-6">
+                              <div class="mt-4 mt-sm-0">
+                                  <div id="radialBar-chart" data-colors='["--bs-primary"]' class="apex-charts"></div>
+                              </div>
+                          </div>
+                      </div>
+                      <p class="text-muted mb-0">We craft digital, graphic and dimensional thinking.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-xl-8">
+              <div class="row">
+                  <div class="col-md-4">
+                      <div class="card mini-stats-wid">
+                          <div class="card-body">
+                              <div class="d-flex">
+                                  <div class="flex-grow-1">
+                                      <p class="text-muted fw-medium">Orders</p>
+                                      <h4 class="mb-0">1,235</h4>
+                                  </div>
+
+                                  <div class="flex-shrink-0 align-self-center">
+                                      <div class="mini-stat-icon avatar-sm rounded-circle bg-primary">
+                                          <span class="avatar-title">
+                                              <i class="bx bx-copy-alt font-size-24"></i>
+                                          </span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="card mini-stats-wid">
+                          <div class="card-body">
+                              <div class="d-flex">
+                                  <div class="flex-grow-1">
+                                      <p class="text-muted fw-medium">Revenue</p>
+                                      <h4 class="mb-0">$35, 723</h4>
+                                  </div>
+
+                                  <div class="flex-shrink-0 align-self-center ">
+                                      <div class="avatar-sm rounded-circle bg-primary mini-stat-icon">
+                                          <span class="avatar-title rounded-circle bg-primary">
+                                              <i class="bx bx-archive-in font-size-24"></i>
+                                          </span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="card mini-stats-wid">
+                          <div class="card-body">
+                              <div class="d-flex">
+                                  <div class="flex-grow-1">
+                                      <p class="text-muted fw-medium">Average Price</p>
+                                      <h4 class="mb-0">$16.2</h4>
+                                  </div>
+
+                                  <div class="flex-shrink-0 align-self-center">
+                                      <div class="avatar-sm rounded-circle bg-primary mini-stat-icon">
+                                          <span class="avatar-title rounded-circle bg-primary">
+                                              <i class="bx bx-purchase-tag-alt font-size-24"></i>
+                                          </span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- end row -->
+
+              <div class="card">
+                  <div class="card-body">
+                      <div class="d-sm-flex flex-wrap">
+                          <h4 class="card-title mb-4">Email Sent</h4>
+                          <div class="ms-auto">
+                              <ul class="nav nav-pills">
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="#">Week</a>
+                                  </li>
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="#">Month</a>
+                                  </li>
+                                  <li class="nav-item">
+                                      <a class="nav-link active" href="#">Year</a>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                      
+                      <div id="stacked-column-chart" class="apex-charts" data-colors='["--bs-primary", "--bs-warning", "--bs-success"]' dir="ltr"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- end row -->
+
+      <div class="row">
+          <div class="col-xl-4">
+              <div class="card">
+                  <div class="card-body">
+                      <h4 class="card-title mb-4">Social Source</h4>
+                      <div class="text-center">
+                          <div class="avatar-sm mx-auto mb-4">
+                              <span class="avatar-title rounded-circle bg-primary-subtle font-size-24">
+                                      <i class="mdi mdi-facebook text-primary"></i>
+                                  </span>
+                          </div>
+                          <p class="font-16 text-muted mb-2"></p>
+                          <h5><a href="javascript: void(0);" class="text-dark">Facebook - <span class="text-muted font-16">125 sales</span> </a></h5>
+                          <p class="text-muted">Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus tincidunt.</p>
+                          <a href="javascript: void(0);" class="text-primary font-16">Learn more <i class="mdi mdi-chevron-right"></i></a>
+                      </div>
+                      <div class="row mt-4">
+                          <div class="col-4">
+                              <div class="social-source text-center mt-3">
+                                  <div class="avatar-xs mx-auto mb-3">
+                                      <span class="avatar-title rounded-circle bg-primary font-size-16">
+                                              <i class="mdi mdi-facebook text-white"></i>
+                                          </span>
+                                  </div>
+                                  <h5 class="font-size-15">Facebook</h5>
+                                  <p class="text-muted mb-0">125 sales</p>
+                              </div>
+                          </div>
+                          <div class="col-4">
+                              <div class="social-source text-center mt-3">
+                                  <div class="avatar-xs mx-auto mb-3">
+                                      <span class="avatar-title rounded-circle bg-info font-size-16">
+                                              <i class="mdi mdi-twitter text-white"></i>
+                                          </span>
+                                  </div>
+                                  <h5 class="font-size-15">Twitter</h5>
+                                  <p class="text-muted mb-0">112 sales</p>
+                              </div>
+                          </div>
+                          <div class="col-4">
+                              <div class="social-source text-center mt-3">
+                                  <div class="avatar-xs mx-auto mb-3">
+                                      <span class="avatar-title rounded-circle bg-pink font-size-16">
+                                              <i class="mdi mdi-instagram text-white"></i>
+                                          </span>
+                                  </div>
+                                  <h5 class="font-size-15">Instagram</h5>
+                                  <p class="text-muted mb-0">104 sales</p>
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+          <div class="col-xl-4">
+              <div class="card">
+                  <div class="card-body">
+                      <h4 class="card-title mb-5">Activity</h4>
+                      <ul class="verti-timeline list-unstyled">
+                          <li class="event-list">
+                              <div class="event-timeline-dot">
+                                  <i class="bx bx-right-arrow-circle font-size-18"></i>
+                              </div>
+                              <div class="d-flex">
+                                  <div class="flex-shrink-0 me-3">
+                                      <h5 class="font-size-14">22 Nov <i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i></h5>
+                                  </div>
+                                  <div class="flex-grow-1">
+                                      <div>
+                                          Responded to need “Volunteer Activities
+                                      </div>
+                                  </div>
+                              </div>
+                          </li>
+                          <li class="event-list">
+                              <div class="event-timeline-dot">
+                                  <i class="bx bx-right-arrow-circle font-size-18"></i>
+                              </div>
+                              <div class="d-flex">
+                                  <div class="flex-shrink-0 me-3">
+                                      <h5 class="font-size-14">17 Nov <i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i></h5>
+                                  </div>
+                                  <div class="flex-grow-1">
+                                      <div>
+                                          Everyone realizes why a new common language would be desirable... <a href="javascript: void(0);">Read more</a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </li>
+                          <li class="event-list active">
+                              <div class="event-timeline-dot">
+                                  <i class="bx bxs-right-arrow-circle font-size-18 bx-fade-right"></i>
+                              </div>
+                              <div class="d-flex">
+                                  <div class="flex-shrink-0 me-3">
+                                      <h5 class="font-size-14">15 Nov <i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i></h5>
+                                  </div>
+                                  <div class="flex-grow-1">
+                                      <div>
+                                          Joined the group “Boardsmanship Forum”
+                                      </div>
+                                  </div>
+                              </div>
+                          </li>
+                          <li class="event-list">
+                              <div class="event-timeline-dot">
+                                  <i class="bx bx-right-arrow-circle font-size-18"></i>
+                              </div>
+                              <div class="d-flex">
+                                  <div class="flex-shrink-0 me-3">
+                                      <h5 class="font-size-14">12 Nov <i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i></h5>
+                                  </div>
+                                  <div class="flex-grow-1">
+                                      <div>
+                                          Responded to need “In-Kind Opportunity”
+                                      </div>
+                                  </div>
+                              </div>
+                          </li>
+                      </ul>
+                      <div class="text-center mt-4"><a href="javascript: void(0);" class="btn btn-primary waves-effect waves-light btn-sm">View More <i class="mdi mdi-arrow-right ms-1"></i></a></div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-xl-4">
+              <div class="card">
+                  <div class="card-body">
+                      <h4 class="card-title mb-4">Top Cities Selling Product</h4>
+
+                      <div class="text-center">
+                          <div class="mb-4">
+                              <i class="bx bx-map-pin text-primary display-4"></i>
+                          </div>
+                          <h3>1,456</h3>
+                          <p>San Francisco</p>
+                      </div>
+
+                      <div class="table-responsive mt-4">
+                          <table class="table align-middle table-nowrap">
+                              <tbody>
+                                  <tr>
+                                      <td style="width: 30%">
+                                          <p class="mb-0">San Francisco</p>
+                                      </td>
+                                      <td style="width: 25%">
+                                          <h5 class="mb-0">1,456</h5></td>
+                                      <td>
+                                          <div class="progress bg-transparent progress-sm">
+                                              <div class="progress-bar bg-primary rounded" role="progressbar" style="width: 94%" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100"></div>
+                                          </div>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <p class="mb-0">Los Angeles</p>
+                                      </td>
+                                      <td>
+                                          <h5 class="mb-0">1,123</h5>
+                                      </td>
+                                      <td>
+                                          <div class="progress bg-transparent progress-sm">
+                                              <div class="progress-bar bg-success rounded" role="progressbar" style="width: 82%" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
+                                          </div>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <p class="mb-0">San Diego</p>
+                                      </td>
+                                      <td>
+                                          <h5 class="mb-0">1,026</h5>
+                                      </td>
+                                      <td>
+                                          <div class="progress bg-transparent progress-sm">
+                                              <div class="progress-bar bg-warning rounded" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                          </div>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- end row -->
+
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="card">
+                  <div class="card-body">
+                      <h4 class="card-title mb-4">Latest Transaction</h4>
+                      <div class="table-responsive">
+                          <table class="table align-middle table-nowrap mb-0">
+                              <thead class="table-light">
+                                  <tr>
+                                      <th style="width: 20px;">
+                                          <div class="form-check font-size-16 align-middle">
+                                              <input class="form-check-input" type="checkbox" id="transactionCheck01">
+                                              <label class="form-check-label" for="transactionCheck01"></label>
+                                          </div>
+                                      </th>
+                                      <th class="align-middle">Order ID</th>
+                                      <th class="align-middle">Billing Name</th>
+                                      <th class="align-middle">Date</th>
+                                      <th class="align-middle">Total</th>
+                                      <th class="align-middle">Payment Status</th>
+                                      <th class="align-middle">Payment Method</th>
+                                      <th class="align-middle">View Details</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td>
+                                          <div class="form-check font-size-16">
+                                              <input class="form-check-input" type="checkbox" id="transactionCheck02">
+                                              <label class="form-check-label" for="transactionCheck02"></label>
+                                          </div>
+                                      </td>
+                                      <td><a href="javascript: void(0);" class="text-body fw-bold">#SK2540</a> </td>
+                                      <td>Neal Matthews</td>
+                                      <td>
+                                          07 Oct, 2019
+                                      </td>
+                                      <td>
+                                          $400
+                                      </td>
+                                      <td>
+                                          <span class="badge badge-pill badge-soft-success font-size-11">Paid</span>
+                                      </td>
+                                      <td>
+                                          <i class="fab fa-cc-mastercard me-1"></i> Mastercard
+                                      </td>
+                                      <td>
+                                          <!-- Button trigger modal -->
+                                          <button type="button" class="btn btn-primary btn-sm btn-rounded waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".transaction-detailModal">
+                                              View Details
+                                          </button>
+                                      </td>
+                                  </tr>
+
+                                  <tr>
+                                      <td>
+                                          <div class="form-check font-size-16">
+                                              <input class="form-check-input" type="checkbox" id="transactionCheck03">
+                                              <label class="form-check-label" for="transactionCheck03"></label>
+                                          </div>
+                                      </td>
+                                      <td><a href="javascript: void(0);" class="text-body fw-bold">#SK2541</a> </td>
+                                      <td>Jamal Burnett</td>
+                                      <td>
+                                          07 Oct, 2019
+                                      </td>
+                                      <td>
+                                          $380
+                                      </td>
+                                      <td>
+                                          <span class="badge badge-pill badge-soft-danger font-size-11">Chargeback</span>
+                                      </td>
+                                      <td>
+                                          <i class="fab fa-cc-visa me-1"></i> Visa
+                                      </td>
+                                      <td>
+                                          <!-- Button trigger modal -->
+                                          <button type="button" class="btn btn-primary btn-sm btn-rounded waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".transaction-detailModal">
+                                              View Details
+                                          </button>
+                                      </td>
+                                  </tr>
+
+                                  <tr>
+                                      <td>
+                                          <div class="form-check font-size-16">
+                                              <input class="form-check-input" type="checkbox" id="transactionCheck04">
+                                              <label class="form-check-label" for="transactionCheck04"></label>
+                                          </div>
+                                      </td>
+                                      <td><a href="javascript: void(0);" class="text-body fw-bold">#SK2542</a> </td>
+                                      <td>Juan Mitchell</td>
+                                      <td>
+                                          06 Oct, 2019
+                                      </td>
+                                      <td>
+                                          $384
+                                      </td>
+                                      <td>
+                                          <span class="badge badge-pill badge-soft-success font-size-11">Paid</span>
+                                      </td>
+                                      <td>
+                                          <i class="fab fa-cc-paypal me-1"></i> Paypal
+                                      </td>
+                                      <td>
+                                          <!-- Button trigger modal -->
+                                          <button type="button" class="btn btn-primary btn-sm btn-rounded waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".transaction-detailModal">
+                                              View Details
+                                          </button>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <div class="form-check font-size-16">
+                                              <input class="form-check-input" type="checkbox" id="transactionCheck05">
+                                              <label class="form-check-label" for="transactionCheck05"></label>
+                                          </div>
+                                      </td>
+                                      <td><a href="javascript: void(0);" class="text-body fw-bold">#SK2543</a> </td>
+                                      <td>Barry Dick</td>
+                                      <td>
+                                          05 Oct, 2019
+                                      </td>
+                                      <td>
+                                          $412
+                                      </td>
+                                      <td>
+                                          <span class="badge badge-pill badge-soft-success font-size-11">Paid</span>
+                                      </td>
+                                      <td>
+                                          <i class="fab fa-cc-mastercard me-1"></i> Mastercard
+                                      </td>
+                                      <td>
+                                          <!-- Button trigger modal -->
+                                          <button type="button" class="btn btn-primary btn-sm btn-rounded waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".transaction-detailModal">
+                                              View Details
+                                          </button>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <div class="form-check font-size-16">
+                                              <input class="form-check-input" type="checkbox" id="transactionCheck06">
+                                              <label class="form-check-label" for="transactionCheck06"></label>
+                                          </div>
+                                      </td>
+                                      <td><a href="javascript: void(0);" class="text-body fw-bold">#SK2544</a> </td>
+                                      <td>Ronald Taylor</td>
+                                      <td>
+                                          04 Oct, 2019
+                                      </td>
+                                      <td>
+                                          $404
+                                      </td>
+                                      <td>
+                                          <span class="badge badge-pill badge-soft-warning font-size-11">Refund</span>
+                                      </td>
+                                      <td>
+                                          <i class="fab fa-cc-visa me-1"></i> Visa
+                                      </td>
+                                      <td>
+                                          <!-- Button trigger modal -->
+                                          <button type="button" class="btn btn-primary btn-sm btn-rounded waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".transaction-detailModal">
+                                              View Details
+                                          </button>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <div class="form-check font-size-16">
+                                              <input class="form-check-input" type="checkbox" id="transactionCheck07">
+                                              <label class="form-check-label" for="transactionCheck07"></label>
+                                          </div>
+                                      </td>
+                                      <td><a href="javascript: void(0);" class="text-body fw-bold">#SK2545</a> </td>
+                                      <td>Jacob Hunter</td>
+                                      <td>
+                                          04 Oct, 2019
+                                      </td>
+                                      <td>
+                                          $392
+                                      </td>
+                                      <td>
+                                          <span class="badge badge-pill badge-soft-success font-size-11">Paid</span>
+                                      </td>
+                                      <td>
+                                          <i class="fab fa-cc-paypal me-1"></i> Paypal
+                                      </td>
+                                      <td>
+                                          <!-- Button trigger modal -->
+                                          <button type="button" class="btn btn-primary btn-sm btn-rounded waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".transaction-detailModal">
+                                              View Details
+                                          </button>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                      <!-- end table-responsive -->
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- end row -->
+  </div>
+  <!-- container-fluid -->
+</div>
+    
 @endsection

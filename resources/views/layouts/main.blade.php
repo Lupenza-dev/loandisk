@@ -1,222 +1,236 @@
-<!DOCTYPE html>
-<html lang="en" dir="">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <title>Loan Sphere</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700,800,900"
-      rel="stylesheet"
-    />
-    <link
-      href="{{ asset('assets/css/themes/lite-purple.min.css')}}"
-      rel="stylesheet"
-    />
-    <link
-      href="{{ asset('assets/css/plugins/perfect-scrollbar.min.css')}}"
-      rel="stylesheet"
-    />
-    <link
-    rel="stylesheet"
-    href="{{ asset('assets/css/plugins/datatables.min.css')}}"
-  />
-  </head>
+<!doctype html>
+<html lang="en">
 
-  <body class="text-left">
-        @include('layouts.sidebar')
-      <!-- =============== Left side End ================-->
-    <div class="main-content-wrap sidenav-open d-flex flex-column">
-     @yield('content')
-     @include('layouts.footer')
-    </div>
-</div>
-    <!-- ============ Search UI Start ============= -->
-    <div class="search-ui">
-      <div class="search-header">
-        <img src="../../dist-assets/images/logo.png" alt="" class="logo" />
-        <button
-          class="search-close btn btn-icon bg-transparent float-right mt-2"
-        >
-          <i class="i-Close-Window text-22 text-muted"></i>
-        </button>
-      </div>
-      <input
-        type="text"
-        placeholder="Type here"
-        class="search-input"
-        autofocus
-      />
-      <div class="search-title">
-        <span class="text-muted">Search results</span>
-      </div>
-      <div class="search-results list-horizontal">
-        <div class="list-item col-md-12 p-0">
-          <div class="card o-hidden flex-row mb-4 d-flex">
-            <div class="list-thumb d-flex">
-              <!-- TUMBNAIL -->
-              <img
-                src="../../dist-assets/images/products/headphone-1.jpg"
-                alt=""
-              />
+    
+<!-- Mirrored from themesbrand.com/skote/layouts/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Jan 2025 08:04:38 GMT -->
+@include('layouts.head')
+
+    <body data-sidebar="dark">
+
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
+
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+
+           @include('layouts.top_header')
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="vertical-menu">
+
+                <div data-simplebar class="h-100">
+
+                    <!--- Sidemenu -->
+                    @include('layouts.sidebar')
+                    <!-- Sidebar -->
+                </div>
             </div>
-            <div class="flex-grow-1 ps-2 d-flex">
-              <div
-                class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center flex-lg-row"
-              >
-                <!-- OTHER DATA -->
-                <a href="" class="w-40 w-sm-100">
-                  <div class="item-title">Headphone 1</div>
-                </a>
-                <p class="m-0 text-muted text-small w-15 w-sm-100">Gadget</p>
-                <p class="m-0 text-muted text-small w-15 w-sm-100">
-                  $300
-                  <del class="text-secondary">$400</del>
-                </p>
-                <p
-                  class="m-0 text-muted text-small w-15 w-sm-100 d-none d-lg-block item-badges"
-                >
-                  <span class="badge bg-danger">Sale</span>
-                </p>
-              </div>
+            <!-- Left Sidebar End -->
+
+            
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+
+               @yield('contents')
+                <!-- End Page-content -->
+
+                <!-- Transaction Modal -->
+                {{-- <div class="modal fade transaction-detailModal" tabindex="-1" role="dialog" aria-labelledby="transaction-detailModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="transaction-detailModalLabel">Order Details</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="mb-2">Product id: <span class="text-primary">#SK2540</span></p>
+                                <p class="mb-4">Billing Name: <span class="text-primary">Neal Matthews</span></p>
+
+                                <div class="table-responsive">
+                                    <table class="table align-middle table-nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Product</th>
+                                                <th scope="col">Product Name</th>
+                                                <th scope="col">Price</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">
+                                                    <div>
+                                                        <img src="assets/images/product/img-7.png" alt="" class="avatar-sm">
+                                                    </div>
+                                                </th>
+                                                <td>
+                                                    <div>
+                                                        <h5 class="text-truncate font-size-14">Wireless Headphone (Black)</h5>
+                                                        <p class="text-muted mb-0">$ 225 x 1</p>
+                                                    </div>
+                                                </td>
+                                                <td>$ 255</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
+                                                    <div>
+                                                        <img src="assets/images/product/img-4.png" alt="" class="avatar-sm">
+                                                    </div>
+                                                </th>
+                                                <td>
+                                                    <div>
+                                                        <h5 class="text-truncate font-size-14">Phone patterned cases</h5>
+                                                        <p class="text-muted mb-0">$ 145 x 1</p>
+                                                    </div>
+                                                </td>
+                                                <td>$ 145</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <h6 class="m-0 text-right">Sub Total:</h6>
+                                                </td>
+                                                <td>
+                                                    $ 400
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <h6 class="m-0 text-right">Shipping:</h6>
+                                                </td>
+                                                <td>
+                                                    Free
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <h6 class="m-0 text-right">Total:</h6>
+                                                </td>
+                                                <td>
+                                                    $ 400
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
+                <!-- end modal -->
+
+                <!-- subscribeModal -->
+                {{-- <div class="modal fade" id="subscribeModal" tabindex="-1" aria-labelledby="subscribeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header border-bottom-0">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="text-center mb-4">
+                                    <div class="avatar-md mx-auto mb-4">
+                                        <div class="avatar-title bg-light rounded-circle text-primary h1">
+                                            <i class="mdi mdi-email-open"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-center">
+                                        <div class="col-xl-10">
+                                            <h4 class="text-primary">Subscribe !</h4>
+                                            <p class="text-muted font-size-14 mb-4">Subscribe our newletter and get notification to stay update.</p>
+
+                                            <div class="input-group bg-light rounded">
+                                                <input type="email" class="form-control bg-transparent border-0" placeholder="Enter Email address" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                                
+                                                <button class="btn btn-primary" type="button" id="button-addon2">
+                                                    <i class="bx bxs-paper-plane"></i>
+                                                </button>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
+                <!-- end modal -->
+
+                @include('layouts.footer')
             </div>
-          </div>
+            <!-- end main content-->
+
         </div>
-        <div class="list-item col-md-12 p-0">
-          <div class="card o-hidden flex-row mb-4 d-flex">
-            <div class="list-thumb d-flex">
-              <!-- TUMBNAIL -->
-              <img
-                src="../../dist-assets/images/products/headphone-2.jpg"
-                alt=""
-              />
-            </div>
-            <div class="flex-grow-1 ps-2 d-flex">
-              <div
-                class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center flex-lg-row"
-              >
-                <!-- OTHER DATA -->
-                <a href="" class="w-40 w-sm-100">
-                  <div class="item-title">Headphone 1</div>
-                </a>
-                <p class="m-0 text-muted text-small w-15 w-sm-100">Gadget</p>
-                <p class="m-0 text-muted text-small w-15 w-sm-100">
-                  $300
-                  <del class="text-secondary">$400</del>
-                </p>
-                <p
-                  class="m-0 text-muted text-small w-15 w-sm-100 d-none d-lg-block item-badges"
-                >
-                  <span class="badge bg-primary">New</span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="list-item col-md-12 p-0">
-          <div class="card o-hidden flex-row mb-4 d-flex">
-            <div class="list-thumb d-flex">
-              <!-- TUMBNAIL -->
-              <img
-                src="../../dist-assets/images/products/headphone-3.jpg"
-                alt=""
-              />
-            </div>
-            <div class="flex-grow-1 ps-2 d-flex">
-              <div
-                class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center flex-lg-row"
-              >
-                <!-- OTHER DATA -->
-                <a href="" class="w-40 w-sm-100">
-                  <div class="item-title">Headphone 1</div>
-                </a>
-                <p class="m-0 text-muted text-small w-15 w-sm-100">Gadget</p>
-                <p class="m-0 text-muted text-small w-15 w-sm-100">
-                  $300
-                  <del class="text-secondary">$400</del>
-                </p>
-                <p
-                  class="m-0 text-muted text-small w-15 w-sm-100 d-none d-lg-block item-badges"
-                >
-                  <span class="badge bg-primary">New</span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="list-item col-md-12 p-0">
-          <div class="card o-hidden flex-row mb-4 d-flex">
-            <div class="list-thumb d-flex">
-              <!-- TUMBNAIL -->
-              <img
-                src="../../dist-assets/images/products/headphone-4.jpg"
-                alt=""
-              />
-            </div>
-            <div class="flex-grow-1 ps-2 d-flex">
-              <div
-                class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center flex-lg-row"
-              >
-                <!-- OTHER DATA -->
-                <a href="" class="w-40 w-sm-100">
-                  <div class="item-title">Headphone 1</div>
-                </a>
-                <p class="m-0 text-muted text-small w-15 w-sm-100">Gadget</p>
-                <p class="m-0 text-muted text-small w-15 w-sm-100">
-                  $300
-                  <del class="text-secondary">$400</del>
-                </p>
-                <p
-                  class="m-0 text-muted text-small w-15 w-sm-100 d-none d-lg-block item-badges"
-                >
-                  <span class="badge bg-primary">New</span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- PAGINATION CONTROL -->
-      <div class="col-md-12 mt-5 text-center">
-        <nav aria-label="Page navigation example">
-          <ul class="pagination d-inline-flex">
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Previous</span>
-              </a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Next</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-    <!-- ============ Search UI End ============= -->
-    <script src="{{ asset('assets/js/plugins/jquery-3.3.1.min.js') }}"></script>
-    <script src="{{ asset('assets/js/plugins/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('assets/js/plugins/perfect-scrollbar.min.js') }}"></script>
-    <script src="{{ asset('assets/js/scripts/script.min.js') }}"></script>
-    <script src="{{ asset('assets/js/scripts/sidebar.large.script.min.js') }}"></script>
-    <script src="{{ asset('assets/js/plugins/apexcharts.min.js') }}"></script>
-    <script src="{{ asset('assets/js/plugins/echarts.min.js') }}"></script>
-    <script src="{{ asset('assets/js/scripts/echart.options.min.js') }}"></script>
-    <script src="{{ asset('assets/js/scripts/dashboard.v3.script.min.js') }}"></script>
-    <script src="{{ asset('assets/js/scripts/apexcharts.min.js') }}"></script>
-    <script src="{{ asset('assets/js/scripts/card.metrics.script.min.js') }}"></script>
-    <script src="{{ asset('assets/js/scripts/widgets-statistics.min.js') }}"></script>
-    <script src="{{ asset('assets/js/scripts/customizer.script.min.js') }}"></script>
-    <script src="{{ asset('assets/js/scripts/apexColumnChart.script.min.js') }}"></script>
-    <script src="{{ asset('assets/js/plugins/datatables.min.js') }}"></script>
-    <script src="{{ asset('assets/js/scripts/datatables.script.min.js') }}"></script>
-    @stack('scripts')
-  </body>
+        <!-- END layout-wrapper -->
+
+        <!-- Right Sidebar -->
+        {{-- <div class="right-bar">
+            <div data-simplebar class="h-100">
+                <div class="rightbar-title d-flex align-items-center px-3 py-4">
+            
+                    <h5 class="m-0 me-2">Settings</h5>
+
+                    <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
+                        <i class="mdi mdi-close noti-icon"></i>
+                    </a>
+                </div>
+
+                <!-- Settings -->
+                <hr class="mt-0" />
+                <h6 class="text-center mb-0">Choose Layouts</h6>
+
+                <div class="p-4">
+                    <div class="mb-2">
+                        <img src="assets/images/layouts/layout-1.jpg" class="img-thumbnail" alt="layout images">
+                    </div>
+
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input theme-choice" type="checkbox" id="light-mode-switch" checked>
+                        <label class="form-check-label" for="light-mode-switch">Light Mode</label>
+                    </div>
+    
+                    <div class="mb-2">
+                        <img src="assets/images/layouts/layout-2.jpg" class="img-thumbnail" alt="layout images">
+                    </div>
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input theme-choice" type="checkbox" id="dark-mode-switch">
+                        <label class="form-check-label" for="dark-mode-switch">Dark Mode</label>
+                    </div>
+    
+                    <div class="mb-2">
+                        <img src="assets/images/layouts/layout-3.jpg" class="img-thumbnail" alt="layout images">
+                    </div>
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input theme-choice" type="checkbox" id="rtl-mode-switch">
+                        <label class="form-check-label" for="rtl-mode-switch">RTL Mode</label>
+                    </div>
+
+                    <div class="mb-2">
+                        <img src="assets/images/layouts/layout-4.jpg" class="img-thumbnail" alt="layout images">
+                    </div>
+                    <div class="form-check form-switch mb-5">
+                        <input class="form-check-input theme-choice" type="checkbox" id="dark-rtl-mode-switch">
+                        <label class="form-check-label" for="dark-rtl-mode-switch">Dark RTL Mode</label>
+                    </div>
+
+            
+                </div>
+
+            </div> <!-- end slimscroll-menu-->
+        </div> --}}
+        <!-- /Right-bar -->
+
+        <!-- Right bar overlay-->
+        <div class="rightbar-overlay"></div>
+
+        <!-- JAVASCRIPT -->
+       @include('layouts.script')
+    </body>
+
+
+<!-- Mirrored from themesbrand.com/skote/layouts/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Jan 2025 08:09:46 GMT -->
 </html>

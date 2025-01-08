@@ -3,6 +3,7 @@
 
 //check_time
 
+use App\Models\Customer;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 
@@ -44,6 +45,34 @@ if (!function_exists('getCompanyName')) {
     }
     # code...
 }
+
+if (!function_exists('getCustomerCode')) {
+    function getCustomerCode(){
+        do
+        {
+            $token =char_string(4);
+            $code = 'LS' . $token . substr(date("Y"), 2);
+            $user_code = Customer::where('customer_code',$code)->first();
+        }
+        while(!empty($user_code));
+        return $code;
+    }
+    # code...
+}
+if (!function_exists('char_string')) {
+    function char_string($length){
+        $token = "";
+        $codeAlphabet = "LOANSPHERECOMPANY";
+        $codeAlphabet.= "0123456789875532423458609543";
+    
+        for($i=0;$i< $length;$i++){
+            $token .= $codeAlphabet[mt_rand(0,strlen($codeAlphabet)-1)];
+        }
+        return $token;
+    }
+    # code...
+}
+
 
 
 
