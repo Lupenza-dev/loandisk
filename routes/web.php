@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Dashboard\AdminController;
 use App\Http\Controllers\Management\CompanyController;
 use App\Http\Controllers\Management\CustomerController;
+use App\Http\Controllers\Management\LoanSettingController;
 use App\Http\Controllers\Management\MenuController;
 use App\Http\Controllers\Management\UserController;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +24,11 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('logout',[LoginController::class,'logout'])->name('logout');
 
     Route::get('management-menu',[MenuController::class,'managementMenu'])->name('management.menu');
+    Route::get('loan-menu',[MenuController::class,'LoanMenu'])->name('loan.menu');
+    Route::get('customer-create',[CustomerController::class,'create'])->name('create.customer');
+    Route::get('get-districts/{region_id}',[CustomerController::class,'getDistrict']);
+    Route::get('loan-types',[LoanSettingController::class,'loanTypes'])->name('loan.types.index');
+    Route::post('loan-type-store',[LoanSettingController::class,'loanTypeStore'])->name('loan.type.store');
 
     Route::resources([
         'branches' =>CompanyController::class,

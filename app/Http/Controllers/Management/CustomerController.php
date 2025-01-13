@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CustomerFormRequest;
 use App\Models\Customer;
 use App\Models\CustomerCompany;
+use App\Models\District;
 use App\Models\Gender;
 use App\Models\IdType;
 use App\Models\MaritialStatus;
@@ -14,6 +15,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Str;
 
 class CustomerController extends Controller
 {
@@ -22,7 +24,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        return view('customers.customer_list');
+        $customer_companies =CustomerCompany::with('customer')->where('company_id',getCompanyId())->get();
+        return view('customers.customer_list',compact('customer_companies'));
     }
 
     /**
@@ -44,9 +47,10 @@ class CustomerController extends Controller
     {
         try {
             DB::transaction(function() use ($valid,$request){
-                $customer =Customer::createOrUpdate([
+                $customer =Customer::updateOrCreate([
                     'first_name' =>$valid['first_name'],
                     'last_name'  =>$valid['last_name'],
+                    'middle_name'  =>$valid['middle_name'],
                     'dob'        =>$valid['dob'],
                     'gender_id'        =>$valid['gender_id'],
                 ],[
@@ -90,6 +94,11 @@ class CustomerController extends Controller
             'success' =>true,
             'message' =>'Registration Done Successfully'
         ],200);
+    }
+
+    public function getDistrict($region_id){
+        $districts =District::where('region_id',$region_id)->get(['id','name']);
+        return response()->json($districts);
     }
 
     /**

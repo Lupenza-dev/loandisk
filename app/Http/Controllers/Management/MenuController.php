@@ -10,4 +10,8 @@ class MenuController extends Controller
     public function managementMenu(){
         return view('menu.management');
     }
+
+    public function LoanMenu(){
+        return view('menu.loan');
+    }
 }

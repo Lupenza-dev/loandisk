@@ -6,6 +6,7 @@ use App\Models\User;
 use Database\Seeders\version1\DistrictsTableSeeder;
 use Database\Seeders\version1\GenderTableSeeder;
 use Database\Seeders\version1\IdTypeTableSeeder;
+use Database\Seeders\version1\LoanCalculationTableSeeder;
 use Database\Seeders\version1\MaritialStatusTableSeeder;
 use Database\Seeders\version1\RegionsTableSeeder;
 use Database\Seeders\version1\RoleTableSeeder;
@@ -33,6 +34,7 @@ class DatabaseSeeder extends Seeder
             MaritialStatusTableSeeder::class,
             RegionsTableSeeder::class,
             DistrictsTableSeeder::class,
+            LoanCalculationTableSeeder::class,
             // VisaTypeSeeder::class
         ]);
     }

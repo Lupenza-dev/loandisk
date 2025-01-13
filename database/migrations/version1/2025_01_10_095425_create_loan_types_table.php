@@ -11,16 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('customer_companies', function (Blueprint $table) {
+        Schema::create('loan_types', function (Blueprint $table) {
             $table->id();
-            $table->integer('customer_id');
+            $table->string('name');
+            $table->string('maturity');
+            $table->string('plan');
+            $table->string('interest');
+            $table->integer('grace_period');
+            $table->integer('loan_repayment_id');
             $table->integer('company_id');
             $table->integer('created_by');
-            $table->boolean('is_active')->default(true);
-            $table->string('image')->nullable();
+            $table->boolean('status')->default(true);
             $table->uuid();
-            $table->softDeletes();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -29,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('customer__companies');
+        Schema::dropIfExists('loan_types');
     }
 };
