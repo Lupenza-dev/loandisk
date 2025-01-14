@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Dashboard\AdminController;
 use App\Http\Controllers\Management\CompanyController;
 use App\Http\Controllers\Management\CustomerController;
+use App\Http\Controllers\Management\LoanController;
 use App\Http\Controllers\Management\LoanSettingController;
 use App\Http\Controllers\Management\MenuController;
 use App\Http\Controllers\Management\UserController;
@@ -29,7 +30,9 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('get-districts/{region_id}',[CustomerController::class,'getDistrict']);
     Route::get('loan-types',[LoanSettingController::class,'loanTypes'])->name('loan.types.index');
     Route::post('loan-type-store',[LoanSettingController::class,'loanTypeStore'])->name('loan.type.store');
-
+    Route::get('loans',[LoanController::class,'allLoans'])->name('loan.index');
+    Route::get('create-loan',[LoanController::class,'createLoan'])->name('create.loan');
+    Route::get('get-plan/{loan_type_id}',[LoanController::class,'getPlan'])->name('get.plan');
     Route::resources([
         'branches' =>CompanyController::class,
         'users'    =>UserController::class,
