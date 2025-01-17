@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Management;
 
 use App\Http\Controllers\Controller;
+use App\Models\CustomerCompany;
 use App\Models\LoanType;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class LoanController extends Controller
 
     public function createLoan(){
         $loan_types =LoanType::get();
-        return view('loan.add_loan',compact('loan_types'));
+        $customers =CustomerCompany::with('customer')->where('company_id',getCompanyId())->get();
+        return view('loan.add_loan',compact('loan_types','customers'));
     }
 
     public function getPlan($loan_type_id){

@@ -32,7 +32,12 @@
                         <div class="row mb-3">
                             <div class="col-lg-12">
                                 <label class="form-label">Customer Name</label>
-                                <select name="customer_id" class="form-control"></select>
+                                <select name="customer_id" class="form-control select2">
+                                    <option value="" selected>Please search Customer</option>
+                                    @foreach ($customers as $customer)
+                                      <option value="{{ $customer->customer_id}}">{{ $customer->customer?->customer_name}} {{ $customer->customer?->phone_number}}</option>  
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -64,54 +69,65 @@
                                 <h4 class="card-title text-center">Guarantors Details</h4>
                             </div>
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-lg-6">
-                                <label for="form-label">Fullname</label>
-                                <input type="text" name="fullname[]" class="form-control" placeholder="Enter Guarantor Fullname">
+                        <div class="guarantor-container">
+                            <div class="row-to-repeat-guarantor">
+                                <div class="row mb-3">
+                                    <div class="col-lg-6">
+                                        <label for="form-label">Fullname</label>
+                                        <input type="text" name="fullname[]" class="form-control" placeholder="Enter Guarantor Fullname">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label for="form-label">Phone Number</label>
+                                        <input type="number" name="phone_number[]" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-lg-6">
+                                        <label for="form-label">Relation</label>
+                                        <input type="text" name="relationship[]" class="form-control" placeholder="Enter Guarantor Relationship">
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <label for="form-label">Location</label>
+                                        <input type="text" name="location[]" class="form-control" placeholder="Enter Guarantor Physical Address">
+                                    </div>
+                                    <div class="col-lg-1">
+                                        <button type="button"  class="btn btn-primary mt-4 guarantor-btn"><i class="bx bx-plus"></i></button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-lg-6">
-                                <label for="form-label">Phone Number</label>
-                                <input type="number" name="phone_number[]" class="form-control" required>
-                            </div>
+                            
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-lg-6">
-                                <label for="form-label">Relation</label>
-                                <input type="text" name="relationship[]" class="form-control" placeholder="Enter Guarantor Relationship">
-                            </div>
-                            <div class="col-lg-5">
-                                <label for="form-label">Location</label>
-                                <input type="text" name="location[]" class="form-control" placeholder="Enter Guarantor Physical Address">
-                            </div>
-                            <div class="col-lg-1">
-                                <button type="button" class="btn btn-primary mt-4"><i class="bx bx-plus"></i></button>
-                            </div>
-                        </div>
+                        
                         <div class="row mb-3 mt-4">
                             <div class="col-md-12">
                                 <h4 class="card-title text-center">Loan Attachment</h4>
                             </div>
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-lg-6">
-                                <label for="">Attachment Name</label>
-                                <input type="text" class="form-control" name="attachment_name[]" placeholder="Enter Attachment Name">
-                            </div>
-                            <div class="col-lg-5">
-                                <label for="form-label">Attachment</label>
-                                <input type="file" name="location[]" class="form-control">
-                            </div>
-                            <div class="col-lg-1">
-                                <button type="button" class="btn btn-primary mt-4"><i class="bx bx-plus"></i></button>
+                        <div class="attachment-container">
+                            <div class="attachment-row">
+                                <div class="row mb-3">
+                                    <div class="col-lg-6">
+                                        <label for="">Attachment Name</label>
+                                        <input type="text" class="form-control" name="attachment_name[]" placeholder="Enter Attachment Name">
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <label for="form-label">Attachment</label>
+                                        <input type="file" name="location[]" class="form-control">
+                                    </div>
+                                    <div class="col-lg-1">
+                                        <button type="button"  class="btn btn-primary mt-4 attachment-btn"><i class="bx bx-plus"></i></button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        
                         <div class="row">
                             <div class="col-lg-12 mb-3" id="alert"></div>
 
                         </div>
                         <div class="row">
                             <div class="row-lg-12 text-center">
-                                <button type="submit" id="reg_btn"  class="btn btn-primary btn-rounded waves-effect waves-light mb-2"><i class="mdi mdi-plus me-1"></i> New Customer</button>
+                                <button type="submit" id="reg_btn"  class="btn btn-primary btn-rounded waves-effect waves-light mb-2"><i class="mdi mdi-plus me-1"></i> New Loan</button>
 
                             </div>
 
@@ -203,5 +219,52 @@
   });
   });
     </script> 
+    <script>
+        $('.guarantor-btn').on('click',function(){
+            const clonedDiv = $(this).closest('.row-to-repeat-guarantor').clone(); 
+             // Clear the inputs in the cloned div
+            clonedDiv.find('input').val('');
+            clonedDiv.find('.guarantor-btn')
+            // .text('Remove')
+            .html('<i class="bx bx-minus"></i>')
+            .removeClass('guarantor-btn')
+            .removeClass('btn-primary')
+            .addClass('remove-btn')
+            .addClass('btn-danger');
+
+            // Append the cloned div to the container
+            $('.guarantor-container').append(clonedDiv);
+
+        });
+
+        $('.guarantor-container').on('click', '.remove-btn', function () {
+            // Remove the parent div of the button
+            $(this).closest('.row-to-repeat-guarantor').remove();
+        });
+    </script>
+    <script>
+        $('.attachment-btn').on('click',function(){
+            const clonedDiv = $(this).closest('.attachment-row').clone(); 
+             // Clear the inputs in the cloned div
+            clonedDiv.find('input').val('');
+            clonedDiv.find('.attachment-btn')
+            // .text('Remove')
+            .html('<i class="bx bx-minus"></i>')
+            .removeClass('attachment-btn')
+            .removeClass('btn-primary')
+            .addClass('remove-attachment-btn')
+            .addClass('btn-danger');
+
+            // Append the cloned div to the container
+            $('.attachment-container').append(clonedDiv);
+
+        });
+
+        $('.attachment-container').on('click', '.remove-attachment-btn', function () {
+            // Remove the parent div of the button
+            $(this).closest('.attachment-row').remove();
+        });
+    </script>
+   
     
 @endpush

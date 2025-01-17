@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Management;
 
 use App\Http\Controllers\Controller;
+use App\Models\CompanyBranch;
 use App\Models\LoanCalculation;
 use App\Models\LoanType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
+use Spatie\Permission\Models\Role;
 use Str;
 
 class LoanSettingController extends Controller
@@ -47,5 +49,11 @@ class LoanSettingController extends Controller
             'success' =>true,
             'message' =>'Registration Done Successfully'
         ],200);
+    }
+
+    public function getWorkFlowLevel(){
+        $roles =Role::whereIn('id',[3,4,5])->get();
+        $branches =CompanyBranch::where('company_id',getCompanyId())->get();
+        return view('management.workflow_level',compact('roles','branches'));
     }
 }

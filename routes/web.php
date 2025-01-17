@@ -30,6 +30,8 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('get-districts/{region_id}',[CustomerController::class,'getDistrict']);
     Route::get('loan-types',[LoanSettingController::class,'loanTypes'])->name('loan.types.index');
     Route::post('loan-type-store',[LoanSettingController::class,'loanTypeStore'])->name('loan.type.store');
+    Route::get('workflows-level-list',[LoanSettingController::class,'getWorkFlowLevel'])->name('workflows.index');
+    Route::post('workflows-level-store',[LoanSettingController::class,'storeWorkFlowLevel'])->name('level.store');
     Route::get('loans',[LoanController::class,'allLoans'])->name('loan.index');
     Route::get('create-loan',[LoanController::class,'createLoan'])->name('create.loan');
     Route::get('get-plan/{loan_type_id}',[LoanController::class,'getPlan'])->name('get.plan');

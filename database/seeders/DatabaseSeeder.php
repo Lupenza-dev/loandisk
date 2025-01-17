@@ -10,6 +10,7 @@ use Database\Seeders\version1\LoanCalculationTableSeeder;
 use Database\Seeders\version1\MaritialStatusTableSeeder;
 use Database\Seeders\version1\RegionsTableSeeder;
 use Database\Seeders\version1\RoleTableSeeder;
+use Database\Seeders\version1\WorkFlowTableSeeder;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -35,6 +36,7 @@ class DatabaseSeeder extends Seeder
             RegionsTableSeeder::class,
             DistrictsTableSeeder::class,
             LoanCalculationTableSeeder::class,
+            WorkFlowTableSeeder::class,
             // VisaTypeSeeder::class
         ]);
     }
